@@ -99,7 +99,9 @@
   height: 4px;
   background-color: dodgerblue; }
 
-.hv-underline:hover::after, .hv-underline :active::after, .hv-underline :focus::after {
+.hv-underline:hover::after,
+.hv-underline :active::after,
+.hv-underline :focus::after {
   -webkit-animation: underline 0.7s both ease-in;
   animation: underline 0.7s both ease-in; }
 
@@ -144,7 +146,7 @@
     width: 0%; } }
 
 .hv-underline-upAndDown::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 4px;
   width: 0%;
@@ -155,7 +157,7 @@
   animation: back-underline 1s ease; }
 
 .hv-underline-upAndDown::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 4px;
   width: 0%;
@@ -168,3 +170,48 @@
 .hv-underline-upAndDown:hover::before, .hv-underline-upAndDown:hover::after {
   -webkit-animation: underline 0.7s both ease-in;
   animation: underline 0.7s both ease-in; }
+
+.hv-underline-square::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0%;
+  background-color: dodgerblue;
+  left: 0;
+  top: 0;
+  -webkit-animation: back-underline 1s ease;
+  animation: back-underline 1s ease; }
+
+.hv-underline-square::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 0px;
+  right: 0;
+  top: 0;
+  border-top: 3px solid dodgerblue;
+  border-bottom: 3px solid dodgerblue; }
+
+.hv-underline-square:hover::after {
+  -webkit-animation: slide-around 1s  ease-in both;
+  animation: slide-around 1s  ease-in both; }
+
+@-webkit-keyframes slide-around {
+  0% {
+    width: 0%;
+    height: 100%; }
+  50% {
+    width: 100%; }
+  100% {
+    width: 100%;
+    height: 100%; } }
+
+@keyframes slide-around {
+  0% {
+    width: 0%;
+    height: 100%; }
+  50% {
+    width: 100%; }
+  100% {
+    width: 100%;
+    height: 100%; } }

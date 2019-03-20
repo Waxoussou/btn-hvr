@@ -86,8 +86,8 @@
 // UNDERLINE EFFECT
 // ---------------
 .hv-underline {
-    &::after {
-        animation: back-underline 0.8s ease;    
+  &::after {
+    animation: back-underline 0.8s ease;
     content: "";
     position: absolute;
     bottom: 0;
@@ -98,7 +98,9 @@
     background-color: dodgerblue;
     // transition: width 0.5s ease-in;
   }
-  &:hover::after, :active::after, :focus::after {
+  &:hover::after,
+  :active::after,
+  :focus::after {
     animation: underline 0.7s both ease-in;
   }
 }
@@ -114,34 +116,32 @@
   60% {
     width: 80%;
   }
-  80%{
-      width: 100%;
+  80% {
+    width: 100%;
   }
-  90%{
-      width: 90%;
+  90% {
+    width: 90%;
   }
-  100%{
-      width: 100%;
+  100% {
+    width: 100%;
   }
 }
 // BACKWARD ------------------
-@keyframes back-underline{
-    0%{
-        width: 100%;;
-    }
-    100%{
-        width: 0%;
-    }
+@keyframes back-underline {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
-
-
 
 // ---------------
 // UNDERLINE UP&&DOWN EFFECT
 // ---------------
-.hv-underline-upAndDown{
-&::before{
-    content: '';
+.hv-underline-upAndDown {
+  &::before {
+    content: "";
     position: absolute;
     height: 4px;
     width: 0%;
@@ -149,9 +149,9 @@
     right: 0;
     top: 0;
     animation: back-underline 1s ease;
-}
-&::after{
-    content: '';
+  }
+  &::after {
+    content: "";
     position: absolute;
     height: 4px;
     width: 0%;
@@ -159,9 +159,58 @@
     left: 0;
     bottom: 0;
     animation: back-underline 1s ease;
-}
-&:hover::before, &:hover::after{
-    animation: underline 0.7s both ease-in; 
-}
+  }
+  &:hover::before,
+  &:hover::after {
+    animation: underline 0.7s both ease-in;
+  }
 }
 
+
+// ---------------
+// UNDERLINE SQUARE EFFECT
+// ---------------
+.hv-underline-square {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 0%;
+      background-color: dodgerblue;
+      left: 0;
+      top: 0;
+      animation: back-underline 1s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0%;
+      width: 0px;
+    //   background-color: dodgerblue;
+      right:  0;
+      top: 0;
+    //   animation: back-underline 1s ease;
+      border-top: 3px solid dodgerblue;
+      border-bottom: 3px solid dodgerblue;
+    }
+    &:hover::before{
+        // animation: underline 0.7s both ease-in;
+    }
+    &:hover::after {
+        animation: slide-around 1s  ease-in both;
+    }
+  }
+
+ @keyframes slide-around {
+     0%{
+        width: 0%;
+        height: 100%; 
+    }
+     50%{
+         width: 100%;
+     }
+     100%{
+         width: 100%;
+        height: 100%;   
+     }
+ } 
