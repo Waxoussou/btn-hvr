@@ -24,7 +24,7 @@
   right: 0;
   width: 100%;
   height: 0%;
-  background-color: rgba(23, 133, 161, 0.5);
+  background-color: rgba(30, 143, 255, 0.651);
   -webkit-animation: back-slide-up 0.8s ease;
   animation: back-slide-up 0.8s ease; }
 
@@ -142,3 +142,29 @@
     width: 100%; }
   100% {
     width: 0%; } }
+
+.hv-underline-upAndDown::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 0%;
+  background-color: dodgerblue;
+  right: 0;
+  top: 0;
+  -webkit-animation: back-underline 1s ease;
+  animation: back-underline 1s ease; }
+
+.hv-underline-upAndDown::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 0%;
+  background-color: dodgerblue;
+  left: 0;
+  bottom: 0;
+  -webkit-animation: back-underline 1s ease;
+  animation: back-underline 1s ease; }
+
+.hv-underline-upAndDown:hover::before, .hv-underline-upAndDown:hover::after {
+  -webkit-animation: underline 0.7s both ease-in;
+  animation: underline 0.7s both ease-in; }

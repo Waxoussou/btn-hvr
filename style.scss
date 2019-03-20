@@ -30,7 +30,7 @@
     // top: 0;
     width: 100%;
     height: 0%;
-    background-color: rgba(23, 133, 161, 0.5);
+    background-color: rgba(30, 143, 255, 0.651);
     animation: back-slide-up 0.8s ease;
   }
   &:hover::after {
@@ -132,5 +132,36 @@
     100%{
         width: 0%;
     }
+}
+
+
+
+// ---------------
+// UNDERLINE UP&&DOWN EFFECT
+// ---------------
+.hv-underline-upAndDown{
+&::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    background-color: dodgerblue;
+    right: 0;
+    top: 0;
+    animation: back-underline 1s ease;
+}
+&::after{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    background-color: dodgerblue;
+    left: 0;
+    bottom: 0;
+    animation: back-underline 1s ease;
+}
+&:hover::before, &:hover::after{
+    animation: underline 0.7s both ease-in; 
+}
 }
 
